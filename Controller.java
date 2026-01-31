@@ -45,15 +45,19 @@ public class Controller {
                     break;
             }
             int random = new Random().nextInt(0, 3);
+            personajes enemicObj = null;
             String enemic = "";
             switch (random) {
                 case 0:
+                    enemicObj = new Guerrer();
                     enemic = "Guerrer";
                     break;
                 case 1:
+                    enemicObj = new Mag();
                     enemic = "Mag";
                     break;
                 case 2:
+                    enemicObj = new Monstre();
                     enemic = "Bestia";
                     break;
             }
@@ -61,44 +65,39 @@ public class Controller {
             System.out.println("Lluitaras contra: " + enemic);
 
             int randomCarta = new Random().nextInt(0, 10);
-            String carta = "";
-            switch (randomCarta) {
-                case 0:
-                    carta = "Escut +20 de vida";
-                    break;
-                case 1:
-                    carta = "Pocio +50 de vida";
-                    break;
-                case 2:
-                    carta = "Pocio +50 de mana";
-                    break;
-                case 3:
-                    carta = "Atac al enemic de 20 punts";
-                    break;
-                case 4:
-                    carta = "Atac al enemic de 30 punts";
-                    break;
-                case 5:
-                    carta = "Atac al enemic de 40 punts";
-                    break;
-                case 6:
-                    carta = "Atac al enemic de 50 punts";
-                    break;
-                case 7:
-                    carta = "L'enemic no pot atacar durant un torn";
-                    break;
-                case 8:
-                    carta = "VIGILA CARTA DOLENTA perds 20 punts de vida";
-                    break;
-                case 9:
-                    carta = "VIGILA CARTA DOLENTA el teu proxim atac farà la meitat de mal";
-                    break;
-                case 10:
-                    carta = "No Has tingut sort";
-                    break;
+            for (int i = 0; i < 5; i++) {
+                System.out.println("Vols atacar?-1-Si-2-No");
+                int o = scanner.nextInt();
+                if (o == 1) {
+                    if (opcio == 1) { // Jo soc Guerrer
+                        if (random == 0)
+                            ((Guerrer) enemicObj).perdrevidaperGUERRER();
+                        else if (random == 1)
+                            ((Mag) enemicObj).perdrevidaperGUERRER();
+                        else if (random == 2)
+                            ((Monstre) enemicObj).perdrevidaperGUERRER();
+                    } else if (opcio == 2) { // Jo soc Mag
+                        if (random == 0)
+                            ((Guerrer) enemicObj).perdrevidaperMAG();
+                        else if (random == 1)
+                            ((Mag) enemicObj).perdrevidaperMAG();
+                        else if (random == 2)
+                            ((Monstre) enemicObj).perdrevidapermag();
+                    } else if (opcio == 3) { // Jo soc Monstre
+                        if (random == 0)
+                            ((Guerrer) enemicObj).perdrevidaperBESTIA();
+                        else if (random == 1)
+                            ((Mag) enemicObj).perdrevidaperBESTIA();
+                        else if (random == 2)
+                            ((Monstre) enemicObj).perdrevidaperBESTIA();
+                    }
+
+                    System.out.println("vols fer servir carta?--Si-1---No----2");
+                    int L = scanner.nextInt();
+                }
+                enemicObj.comprobarvida();
+                t.comprobarvida();
             }
-            System.out.println("Has tret la carta: " + carta);
-            System.out.println("QUE COMNÇI LA BATALLA!!!");
         }
     }
 }

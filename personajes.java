@@ -1,4 +1,4 @@
-public class personajes {
+public abstract class personajes {
     String nom;
     int nivell;
     int puntsvida;
@@ -9,4 +9,5 @@ public class personajes {
         this.puntsvida = puntsvida;
     }
 
+    public abstract void comprobarvida();
 }

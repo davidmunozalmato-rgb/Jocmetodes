@@ -19,15 +19,15 @@ public class Mag extends personajes {
 
     }
 
-    public void perdrevidaperMAG2() {
+    public void perdrevidaperMAG() {
         this.puntsvida -= 10;
     }
 
-    public void perdrevidaperbestia() {
+    public void perdrevidaperBESTIA() {
         this.puntsvida -= 20;
     }
 
-    public void perdrevidaperguerrer() {
+    public void perdrevidaperGUERRER() {
         this.puntsvida -= 15;
     }
 
@@ -47,7 +47,14 @@ public class Mag extends personajes {
 
     public void atacarMag(Mag mag) {
         System.out.println("El mag ataca amb una flamarada.");
-        mag.perdrevidaperMAG2();
+        mag.perdrevidaperMAG();
+    }
+
+    public void comprobarvida() {
+        if (this.puntsvida <= 0) {
+            System.out.println("Ha mort el mag");
+        }
+
     }
 
 }
