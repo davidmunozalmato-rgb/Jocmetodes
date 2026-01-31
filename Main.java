@@ -1,5 +1,5 @@
 public class Main {
-    static Mecanicas t;
+    static personajes t;
 
     public static void main(String[] args) {
         Controller controller = new Controller();

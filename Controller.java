@@ -3,10 +3,10 @@ import java.util.Random;
 
 public class Controller {
 
-    Mecanicas t;
+    personajes t;
 
     public Controller() {
-        t = new Mecanicas();
+        t = new personajes();
     }
 
     public void run() {

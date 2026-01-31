@@ -1,19 +1,22 @@
-public class Mag extends Mecanicas {
+public class Mag extends personajes {
 
-    private Mag(String nom, int nivell, int puntsvida) {
+    private int mana = 100;
+
+    public Mag(String nom, int nivell, int puntsvida) {
         super(nom, nivell, puntsvida);
-        puntsvida = 50;
     }
 
-    public int getNivell() {
-        return nivell;
+    public void setMana(int mana) {
+        this.mana = Math.max(0, mana);
     }
 
-    public String getNom() {
-        return nom;
+    public void perdreMana() {
+        this.mana -= 10;
+
     }
 
-    public void setPuntsvida(int puntsvida) {
-        this.puntsvida = puntsvida;
+    public void veureMana() {
+        System.out.println("El mag té " + this.mana + " punts de mana.");
     }
+
 }
