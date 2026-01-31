@@ -2,8 +2,12 @@ public class Mag extends personajes {
 
     private int mana = 100;
 
+    public Mag() {
+        super("Mag", 1, 50);
+    }
+
     public Mag(String nom, int nivell, int puntsvida) {
-        super("Mag", 0, 80);
+        super(nom, nivell, puntsvida);
     }
 
     public void setMana(int mana) {
