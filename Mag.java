@@ -23,6 +23,14 @@ public class Mag extends personajes {
         this.puntsvida -= 10;
     }
 
+    public void perdrevidaperbestia() {
+        this.puntsvida -= 20;
+    }
+
+    public void perdrevidaperguerrer() {
+        this.puntsvida -= 15;
+    }
+
     public void veureMana() {
         System.out.println("El mag té " + this.mana + " punts de mana.");
     }

@@ -59,6 +59,46 @@ public class Controller {
             }
 
             System.out.println("Lluitaras contra: " + enemic);
+
+            int randomCarta = new Random().nextInt(0, 10);
+            String carta = "";
+            switch (randomCarta) {
+                case 0:
+                    carta = "Escut +20 de vida";
+                    break;
+                case 1:
+                    carta = "Pocio +50 de vida";
+                    break;
+                case 2:
+                    carta = "Pocio +50 de mana";
+                    break;
+                case 3:
+                    carta = "Atac al enemic de 20 punts";
+                    break;
+                case 4:
+                    carta = "Atac al enemic de 30 punts";
+                    break;
+                case 5:
+                    carta = "Atac al enemic de 40 punts";
+                    break;
+                case 6:
+                    carta = "Atac al enemic de 50 punts";
+                    break;
+                case 7:
+                    carta = "L'enemic no pot atacar durant un torn";
+                    break;
+                case 8:
+                    carta = "VIGILA CARTA DOLENTA perds 20 punts de vida";
+                    break;
+                case 9:
+                    carta = "VIGILA CARTA DOLENTA el teu proxim atac farà la meitat de mal";
+                    break;
+                case 10:
+                    carta = "No Has tingut sort";
+                    break;
+            }
+            System.out.println("Has tret la carta: " + carta);
+            System.out.println("QUE COMNÇI LA BATALLA!!!");
         }
     }
 }
